@@ -6,4 +6,5 @@ urlpatterns = [
     path('amigos/', views.amigos, name='amigos'),
     path('familia/', views.familia, name='familia'),
     path('empresa/', views.empresa, name='empresa'),
+    path('<int:contato_id>', views.exibir_contato, name='exibir_contato'),
 ]
