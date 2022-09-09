@@ -121,13 +121,15 @@
   </thead>
   <tbody>
     {%for contato in contatos%}
+    {%if contato.mostrar%}
     <tr>
         <td>{{contato.id}}</td>
-        <td>{{contato.nome}} {{contato.sobrenome}}</td>
+        <td><a href="{% url 'exibir_contato' contato.id%}"> {{contato.nome}} {{contato.sobrenome}} </a> </td>
         <td>{{contato.categoria}}</td>
         <td>{{contato.email}}</td>
         <td>{{contato.telefone}}</td>
     </tr>
+    {%endif%}
     {%endfor%}
   </tbody>
 </table>
